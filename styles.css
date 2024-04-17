@@ -1,9 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
   margin: 0;
   /* outline: solid 1px blue; */
+}
+
+:root {
+  --font-family: "Share Tech Mono", "Courier New", Courier, monospace;
+  
+}
+
+body {
+  background-color: #111;
+  font-family: var(--font-family);
+}
+
+.highlight {
+  --highlight-color: hsl(170, 100%, 80%);
+  --hover-color: #222;
+  border: none;
+  border-radius: 0.2em;
+  outline: 1px solid white;
+  color: white;
+}
+.highlight:hover {
+  background-color: var(--hover-color);
+  outline: 2px solid var(--highlight-color);
+}
+.highlight:focus {
+  outline: 2px solid var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .command {
@@ -17,10 +46,12 @@
   font-size: inherit;
   width: 50%;
   padding: 0.75em;
+  background-color: #0a0a0a;
+  font-family: inherit;
 }
-.command > button {
-  font-size: inherit;
-  padding: 0.75em;
+.command > input:focus {
+  outline: 2px solid var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .main {
@@ -42,4 +73,13 @@
   flex-grow: 1;
   resize: none;
   padding: 1em;
+  background-color: #0a0a0a;
+  font-family: inherit;
+  color: white;
+}
+.column > label {
+  font-size: 2.5rem;
+  font-variant: small-caps;
+  color: white;
+  margin-bottom: 0.3em;
 }
